@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_button</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,14 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>button_text="";
-button_action=scr_null_action;
+            <string>cb_text="";
+cb_sprite=spr_cb;
+cb_text_offset=16;
+cb_si_checked=1;
+cb_si_unchecked=0;
+cb_checked=false;
+cb_action=scr_null_action;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,7 +54,7 @@ button_action=scr_null_action;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(button_action);
+            <string>cb_checked = !cb_checked;
 </string>
           </argument>
         </arguments>
@@ -72,12 +77,15 @@ button_action=scr_null_action;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_text(x,y,button_text);
-//draw_set_halign(fa_left);
-
+            <string>if(cb_checked == true){
+    subimage = cb_si_checked;
+}
+else
+{
+    subimage = cb_si_unchecked;
+}
+draw_sprite(cb_sprite, subimage, x, y);
+draw_text(cb_text_offset + x, y, cb_text);
 </string>
           </argument>
         </arguments>

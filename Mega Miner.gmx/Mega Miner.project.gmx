@@ -7,21 +7,25 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_cb</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_button_start.gml</script>
     <script>scripts\scr_button_exit.gml</script>
+    <script>scripts\scr_null_action.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_button_parent</object>
     <object>objects\obj_button_start</object>
     <object>objects\obj_button_exit</object>
+    <object>objects\obj_cb_parent</object>
+    <object>objects\obj_cb_test</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
-    <room>rooms\rm_game</room>
+    <room>rooms\rm_hallway</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
