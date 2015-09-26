@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_cb_parent</parentName>
-  <maskName>spr_cb</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,15 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-cb_text="Random Game?";
-
+            <string>ti_width=128;
+ti_height=string_height("X")+8;
+ti_focus=false;
+ti_contents="";
+ti_cursor_blink=0;
+ti_enabled=true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,12 +53,59 @@ cb_text="Random Game?";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>event_inherited();
-obj_ti_game_num.ti_enabled = !cb_checked;
-if(cb_checked){
-    randomize();
-    obj_ti_game_num.ti_contents = random_get_seed();
+            <string>var old_ti_focus = ti_focus;
+ti_focus = point_in_rectangle(mouse_x, mouse_y, x, y, x+ti_width, y+ti_height);
+
+if(ti_focus &amp;&amp; (old_ti_focus != ti_focus)){
+    keyboard_string = ti_contents;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_color(c_black);
+draw_rectangle(x,y,x+ti_width,y+ti_height,false);
+draw_set_color(c_gray);
+draw_rectangle(x+2,y+2,x+ti_width,y+ti_height,false);
+if(ti_enabled){
+    draw_set_color(c_white);
+}else{
+    draw_set_color(c_gray);
+}
+draw_rectangle(x+2,y+2,x+ti_width-2,y+ti_height-2,false);
+
+draw_set_color(c_black);
+if(ti_focus){
+    ti_cursor_blink = (ti_cursor_blink + 1) % 60;
+    ti_contents = keyboard_string;
+    if(ti_cursor_blink &lt; 30){
+        var xx = x + string_width(ti_contents) + 6;
+        draw_line(xx, y + 3, xx, y + ti_height - 3);
+    }
+}
+
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
+draw_text(x+4, y+ti_height-4, ti_contents);
+
 </string>
           </argument>
         </arguments>

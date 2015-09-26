@@ -52,8 +52,9 @@
   </views>
   <instances>
     <instance objName="obj_button_start" x="288" y="160" name="inst_14DDACB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_button_exit" x="288" y="256" name="inst_8D3C8F49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_button_exit" x="288" y="288" name="inst_8D3C8F49" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cb_test" x="224" y="192" name="inst_3298B2C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ti_game_num" x="224" y="224" name="inst_E8E91293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

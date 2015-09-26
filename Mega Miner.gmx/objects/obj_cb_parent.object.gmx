@@ -37,7 +37,7 @@ cb_action=scr_null_action;
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="0">
+    <event eventtype="6" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,6 +85,8 @@ else
     subimage = cb_si_unchecked;
 }
 draw_sprite(cb_sprite, subimage, x, y);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
 draw_text(cb_text_offset + x, y, cb_text);
 </string>
           </argument>
