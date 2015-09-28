@@ -54,7 +54,7 @@ cb_text="Random Game?";
 obj_ti_game_num.ti_enabled = !cb_checked;
 if(cb_checked){
     randomize();
-    obj_ti_game_num.ti_contents = random_get_seed();
+    obj_ti_game_num.ti_contents = string(random_get_seed());
 }
 </string>
           </argument>
