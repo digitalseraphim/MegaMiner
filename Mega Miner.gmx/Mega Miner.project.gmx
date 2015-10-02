@@ -15,6 +15,8 @@
     <script>scripts\scr_button_start.gml</script>
     <script>scripts\scr_button_exit.gml</script>
     <script>scripts\scr_null_action.gml</script>
+    <script>scripts\scr_init_game.gml</script>
+    <script>scripts\scr_machines.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
